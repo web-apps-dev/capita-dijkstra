@@ -1,4 +1,4 @@
-# Dihjstra Routing Exercise
+# Dijkstra Routing Exercise
 
 ## Caveats
 
