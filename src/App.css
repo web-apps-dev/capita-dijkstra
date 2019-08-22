@@ -1,0 +1,44 @@
+.App {
+  text-align: center;
+  color: black;  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.App-header {
+  background-color: white;
+  min-height: 10vh;
+  font-size: calc(10px + 2vmin);
+  color: black;
+}
+
+#graph-container {
+  background-color: lightgrey;
+  min-height: 40vh;
+  min-width: 90vw;
+}
+
+#selection-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+#selection-container {
+  width: 58%;
+  height: 30vh;
+  background-color: antiquewhite;
+}
+
+#results-container {
+  width: 38%;
+  height: 30vh;
+  background-color: aquamarine;
+
+}
+
+.App-link {
+  color: #61dafb;
+}
