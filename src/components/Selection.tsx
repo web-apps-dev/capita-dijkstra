@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const Selection: React.FC = () => {
+const Selection: React.FC = props => {
   const initialNodeState = [
     { name: "A", id: "1" },
     { name: "B", id: "2" },
@@ -17,15 +17,23 @@ const Selection: React.FC = () => {
   const [destNode] = useState("H");
 
   // inline stle
-  const style = { color: "green" };
+  const startStyle = { color: "green", marginBottom: 5 };
+  const destStyle = { color: "blue", marginBottom: 5 };
 
   return (
     <div id="selection-container">
-      <h2>The Selection component</h2>
-      <div id="start" style={style}>
-        Start Node : {startNode}
+      <h3>The Selection component</h3>
+      <div id="start" style={startStyle}>
+        <h4>Start Node : {startNode}</h4>
       </div>
-      <div id="destination">Destination Node : {destNode}</div>
+      <div id="destination" style={destStyle}>
+        <h4>Destination Node : {destNode}</h4>
+      </div>
+      <div id="instructions">
+        <p>Single click to change start node. </p>
+        <p>Double click to change destination node.</p>
+        <p>Zoom with mouse wheel</p>
+      </div>
     </div>
   );
 };
