@@ -28,13 +28,9 @@ export const dijkstra = (
   endNodeName: string = "finish"
 ) => {
   const startNode = graph[startNodeName];
-  // console.log("startNodeName : " + startNodeName);
-  // console.log("endNodeName : " + endNodeName);
-  // console.log("startNode : ", startNode);
 
   // track lowest cost to reach each node
   const costs = Object.assign({ [endNodeName]: Infinity }, startNode);
-  // console.log("costs : ", costs);
 
   // track paths
   const parents = { [endNodeName]: "" };
@@ -42,13 +38,11 @@ export const dijkstra = (
   for (let child in startNode) {
     parents[child] = startNodeName;
   }
-  // console.log("Initial parents : ", parents);
 
   // track nodes that have already been processed
   const processed: Array<string> = [];
 
   let node = lowestCostNode(costs, processed);
-  // console.log("node : ", node);
 
   while (node) {
     let cost = costs[node];
@@ -61,9 +55,7 @@ export const dijkstra = (
       }
     }
     processed.push(node);
-    // console.log("processed : ", node);
     node = lowestCostNode(costs, processed);
-    // console.log("next node : ", node);
   }
 
   let shortestPath = [endNodeName];
@@ -80,5 +72,3 @@ export const dijkstra = (
 
   return results;
 };
-
-// console.log(dijkstra(problem));

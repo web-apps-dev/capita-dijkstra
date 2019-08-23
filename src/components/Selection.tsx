@@ -1,21 +1,11 @@
-import React, { useState } from "react";
+import React from "react";
 
-const Selection: React.FC = props => {
-  const initialNodeState = [
-    { name: "A", id: "1" },
-    { name: "B", id: "2" },
-    { name: "C", id: "3" },
-    { name: "D", id: "4" },
-    { name: "E", id: "5" },
-    { name: "F", id: "6" },
-    { name: "G", id: "7" },
-    { name: "H", id: "8" }
-  ];
+interface ISelectionProps {
+  start: string;
+  destination: string;
+}
 
-  const [nodes] = useState(initialNodeState);
-  const [startNode] = useState("B");
-  const [destNode] = useState("H");
-
+const Selection: React.FC<ISelectionProps> = props => {
   // inline stle
   const startStyle = { color: "green", marginBottom: 5 };
   const destStyle = { color: "blue", marginBottom: 5 };
@@ -24,10 +14,10 @@ const Selection: React.FC = props => {
     <div id="selection-container">
       <h3>The Selection component</h3>
       <div id="start" style={startStyle}>
-        <h4>Start Node : {startNode}</h4>
+        <h4>Start Node : {props.start}</h4>
       </div>
       <div id="destination" style={destStyle}>
-        <h4>Destination Node : {destNode}</h4>
+        <h4>Destination Node : {props.destination}</h4>
       </div>
       <div id="instructions">
         <p>Single click to change start node. </p>

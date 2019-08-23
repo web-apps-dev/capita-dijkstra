@@ -1,5 +1,4 @@
 import React from "react";
-import { ResultsManager } from "./components/ResultsManager";
 import { DGraph } from "./components/DGraph";
 
 import "./App.css";
@@ -12,7 +11,6 @@ const App: React.FC = () => {
       </header>
       <div id="main-container">
         <DGraph />
-        <ResultsManager />
       </div>
     </div>
   );

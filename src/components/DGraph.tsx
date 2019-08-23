@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import { Graph } from "react-d3-graph";
 
+import { Selection } from "./Selection";
+import { RouteResults } from "./RouteResults";
+
 /**
  * This component displays a visual representation
  * of the graph.
@@ -32,6 +35,15 @@ const DGraph: React.FC = () => {
   };
 
   const [data, setData] = useState(initialData);
+
+  const getStart = () => {
+    const node = data.nodes.find(e => e.symbolType === "square");
+    return node ? node.id : "A";
+  };
+  const getDestination = () => {
+    const node = data.nodes.find(e => e.symbolType === "triangle");
+    return node ? node.id : "H";
+  };
 
   const myConfig = {
     nodeHighlightBehavior: true,
@@ -104,15 +116,21 @@ const DGraph: React.FC = () => {
   };
 
   return (
-    <div id="graph-container">
-      <h2>The Graph component</h2>
-      <Graph
-        id="graph-id"
-        data={data}
-        config={myConfig}
-        onClickNode={onClickNode}
-        onDoubleClickNode={onDoubleClickNode}
-      />
+    <div>
+      <div id="graph-container">
+        <h2>The Graph component</h2>
+        <Graph
+          id="graph-id"
+          data={data}
+          config={myConfig}
+          onClickNode={onClickNode}
+          onDoubleClickNode={onDoubleClickNode}
+        />
+      </div>
+      <div id="selection-wrapper">
+        <Selection start={getStart()} destination={getDestination()} />
+        <RouteResults start={getStart()} destination={getDestination()} />
+      </div>
     </div>
   );
 };
