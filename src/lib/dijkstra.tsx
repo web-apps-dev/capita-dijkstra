@@ -1,12 +1,3 @@
-// const problem = {
-//   start: { A: 5, B: 2 },
-//   A: { C: 4, D: 2 },
-//   B: { A: 8, D: 7 },
-//   C: { D: 6, finish: 3 },
-//   D: { finish: 1 },
-//   finish: {}
-// };
-
 const lowestCostNode = (
   costs: { [key: string]: number },
   processed: Array<string>
@@ -22,8 +13,8 @@ const lowestCostNode = (
 };
 
 // function that returns the minimum cost and path to reach Finish
-export const dijkstra = (
-  graph: { [key: string]: any },
+const dijkstra = (
+  graph: { [key: string]: { [key: string]: number } },
   startNodeName: string = "start",
   endNodeName: string = "finish"
 ) => {
@@ -70,5 +61,8 @@ export const dijkstra = (
     path: shortestPath
   };
 
+  // console.log("results : ", results);
   return results;
 };
+
+export { dijkstra };
