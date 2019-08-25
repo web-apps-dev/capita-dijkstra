@@ -29,6 +29,21 @@ const initialData = {
   ]
 };
 
+const myConfig = {
+  nodeHighlightBehavior: true,
+  node: {
+    color: "lightgreen",
+    size: 120,
+    highlightStrokeColor: "blue"
+  },
+  link: {
+    highlightColor: "lightblue",
+    color: "lightblue",
+    renderLabel: true,
+    fontSize: 11
+  }
+};
+
 /**
  * This component displays a visual representation
  * of the graph.
@@ -38,31 +53,17 @@ const DGraph: React.FC = () => {
 
   const getStart = () => {
     const node = data.nodes.find(e => e.symbolType === "square");
-    return node ? node.id : "A";
+    return node ? node.id : data.nodes[0].id;
   };
   const getDestination = () => {
     const node = data.nodes.find(e => e.symbolType === "triangle");
     return node ? node.id : "H";
   };
 
-  const myConfig = {
-    nodeHighlightBehavior: true,
-    node: {
-      color: "lightgreen",
-      size: 120,
-      highlightStrokeColor: "blue"
-    },
-    link: {
-      highlightColor: "lightblue",
-      color: "lightblue",
-      renderLabel: true,
-      fontSize: 11
-    }
-  };
-
+  /* istanbul ignore next */
   /**
-   * Move start or destination provided
-   * Should use Ramda here to tidy thing up a bit
+   * Move start or destination provided.
+   * Should use Ramda here to tidy thing up a bit.
    */
   const swapNode = (
     nodeId: string,
@@ -87,10 +88,15 @@ const DGraph: React.FC = () => {
       }
       return e;
     });
-    console.log("swapNode : ", newNodes);
+
     return newNodes;
   };
 
+  /* istanbul ignore next */
+  /**
+   *
+   * @param nodeId The node to move the `Start` to.
+   */
   const onClickNode = (nodeId: string) => {
     let bOverridingDest = false;
 
@@ -105,6 +111,11 @@ const DGraph: React.FC = () => {
     }
   };
 
+  /* istanbul ignore next */
+  /**
+   *
+   * @param nodeId The node to move the `Destination` to.
+   */
   const onDoubleClickNode = (nodeId: string) => {
     let bOverridingStart = false;
 

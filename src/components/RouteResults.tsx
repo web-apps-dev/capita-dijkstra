@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { dijkstra } from "../lib/dijkstra";
 
 interface IRouteResultsProps {
@@ -17,12 +17,18 @@ const graph = {
   H: {}
 };
 
+/**
+ * Displays the `Distance` and `Route` of a path.
+ *
+ * @param start Start node.
+ * @param destination Destination node.
+ */
 const RouteResults: React.FC<IRouteResultsProps> = props => {
   const results = dijkstra(graph, props.start, props.destination);
 
   return (
     <div id="results-container">
-      <h2>The Results component</h2>
+      <h3>The Results component</h3>
       <div id="results">
         <span id="distance">
           Distance : <span data-testid="distance">{results.distance}</span>
