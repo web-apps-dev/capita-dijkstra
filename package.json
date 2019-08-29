@@ -50,6 +50,11 @@
     "coveragePathIgnorePatterns": [
       "<rootDir>/src/index.tsx",
       "<rootDir>/src/serviceWorker.ts"
-    ]
+    ],
+    "typeAcquisition": {
+      "include": [
+        "jest"
+      ]
+    }
   }
 }

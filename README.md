@@ -1,8 +1,8 @@
-# Dijkstra Routing Exercise
+# Dijkstra Routing Excursion
 
 ## Development Notes
 
-The idea is for the Graph component to send the `start` (left click) and `destination` (right click) nodes to the Selection and Results components. The Results component will then call the dijkstra library function to perform the calculation subsequently display the shortes route.
+The idea is for the Graph component to send the `start` (left click) and `destination` (right click) nodes to the Selection and Results components. The Results component will then call the Dijkstra library function to perform the calculation and subsequently display the shortest route.
 
 **See the `dev` branch for more complete functionality.**
 
