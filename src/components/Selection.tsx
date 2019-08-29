@@ -14,10 +14,15 @@ const Selection: React.FC<ISelectionProps> = props => {
     <div id="selection-container">
       <h3>The Selection component</h3>
       <div id="start" style={startStyle}>
-        <h4>Start Node : {props.start}</h4>
+        <h4>
+          Start Node : <span data-testid="selectionStart">{props.start}</span>
+        </h4>
       </div>
       <div id="destination" style={destStyle}>
-        <h4>Destination Node : {props.destination}</h4>
+        <h4>
+          Destination Node :{" "}
+          <span data-testid="selectionDest">{props.destination}</span>
+        </h4>
       </div>
       <div id="instructions">
         <p>Single click to change start node. </p>
