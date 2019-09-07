@@ -17,15 +17,15 @@ const initialData = {
   ],
   links: [
     { source: "A", target: "C", label: "2" },
-    { source: "B", target: "D" },
-    { source: "B", target: "E" },
-    { source: "C", target: "D" },
-    { source: "C", target: "F" },
-    { source: "D", target: "F" },
-    { source: "D", target: "G" },
-    { source: "E", target: "H" },
-    { source: "F", target: "G" },
-    { source: "G", target: "H" }
+    { source: "B", target: "D", label: "4" },
+    { source: "B", target: "E", label: "7" },
+    { source: "C", target: "D", label: "1" },
+    { source: "C", target: "F", label: "4" },
+    { source: "D", target: "F", label: "1" },
+    { source: "D", target: "G", label: "2" },
+    { source: "E", target: "H", label: "10" },
+    { source: "F", target: "G", label: "3" },
+    { source: "G", target: "H", label: "4" }
   ]
 };
 
